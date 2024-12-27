@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.10.34928.147
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FCNetwork", "FCNetwork.csproj", "{31CECB81-AE8A-4D00-94B7-3FFFB7DD2B94}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{31CECB81-AE8A-4D00-94B7-3FFFB7DD2B94}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{31CECB81-AE8A-4D00-94B7-3FFFB7DD2B94}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{31CECB81-AE8A-4D00-94B7-3FFFB7DD2B94}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{31CECB81-AE8A-4D00-94B7-3FFFB7DD2B94}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {CB8A6313-07DC-40E3-90A4-D59EAA3D9F11}
+	EndGlobalSection
+EndGlobal

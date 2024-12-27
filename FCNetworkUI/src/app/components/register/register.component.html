@@ -1,0 +1,86 @@
+
+<div class="hero min-h-screen bg-base-200">
+  <div class="hero-content flex-col lg:flex-row-reverse">
+    <div class="card shrink-0 w-full max-w-sm shadow-xl bg-base-100">
+      <div class="text-center text-warning">
+        <div class="card card-title">
+          Inscription
+        </div>
+      </div>
+
+      <div class="text-center">
+        <div class="avatar">
+          <div class="w-24 rounded-full">
+            <img src="/assets/img/logo-black-transparent.png" />
+          </div>
+        </div>
+      </div>
+      <form  [formGroup]="registerForm" autocomplete="off" (ngSubmit)="onSubmit()" novalidate class="card-body">
+
+<!--        <div *ngIf="alertModel" role="alert" class="{{alertModel.type}}">-->
+<!--          &lt;!&ndash; <svg xmlns="http://www.w3.org/2000/svg" class="stroke-current shrink-0 h-6 w-6" fill="none" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 14l2-2m0 0l2-2m-2 2l-2-2m2 2l2 2m7-2a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>&ndash;&gt;-->
+<!--          <span>{{ alertModel.message }}</span>-->
+<!--        </div>-->
+        <div class="form-control">
+          <label class="label">
+            <span class="label-text">Email</span>
+          </label>
+          <input type="email" placeholder="email" formControlName="email" class="input input-bordered" required />
+        </div>
+
+        <div class="form-control">
+          <label class="label">
+            <span class="label-text">Mot de passe</span>
+          </label>
+          <input type="password" placeholder="Mot de passe" formControlName="password" class="input input-bordered" required />
+        </div>
+
+        <div class="form-control">
+          <label class="label">
+            <span class="label-text">Confirmation de passe</span>
+          </label>
+          <input type="password" placeholder="Confirmation" formControlName="passwordConfirm" class="input input-bordered" required />
+        </div>
+
+        <div class="form-control">
+          <label class="label">
+            <span class="label-text">Plateforme de jeu ?</span>
+          </label>
+          <div class="h-flex grid grid-cols-2 gap-3 content-around">
+            <select formControlName="platformDeviceID" class="select select-bordered w-full max-w-xs">
+              <option disabled selected>ps: team nextgen ♥</option>
+              <option value="{{ device.id }}" *ngFor="let device of devices$(); index as i">{{ device.name }}</option>
+            </select>
+            <div class="items-center w-8">
+              @if(getDeviceImage(this.registerForm.get('platformDeviceID')?.value)){
+                <img src="/assets/img/platform/{{ getDeviceImage(this.registerForm.get('platformDeviceID')?.value) }}.png" />
+              }
+            </div>
+          </div>
+        </div>
+
+        <div class="form-control">
+          <label class="label">
+            <span class="label-text">Compte EA</span>
+          </label>
+          <input type="text" formControlName="eaAccount" placeholder="Compte EA" class="input input-bordered" required />
+        </div>
+
+        <div class="form-control mt-6 text-center">
+          <div class="h-flex grid grid-cols-1 gap-1 content-around">
+            <div class="text-center">
+              @if(registrationInProgress$()){
+                <button class="btn btn-outline btn-accent">
+                  <span class="loading loading-spinner"></span>
+                </button>
+              }@else{
+                <button class="btn btn-outline btn-info">Inscription</button>
+              }
+
+            </div>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
